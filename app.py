@@ -10,19 +10,23 @@ def index():
 
 @app.route('/about')
 def about():
-    return app.send_static_file('about.html')
+    return render_template('about.html')
+
 
 @app.route('/gallery')
 def gallery():
-    return app.send_static_file('gallery.html')
+    return render_template('gallery.html')
+
 
 @app.route('/contact')
 def contact():
-    return app.send_static_file('contact.html')
+    return render_template('contact.html')
+
 
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html'),404
+    return render_template('404.html'), 404
+
 
 if __name__ == '__main__':
     app.run(debug=True)
